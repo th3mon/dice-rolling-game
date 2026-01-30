@@ -6,6 +6,7 @@ messages = {
     "invalid": "Invalid choice!",
     "thanks": "Thanks for playing!",
 }
+counter = 0
 
 
 def roll_dice(dice_quantity: str):
@@ -37,7 +38,9 @@ while True:
             print(results.get("error"))
         else:
             dice = ", ".join(results.get("values"))
+            counter += len(results.get("values"))
             print(f"({dice})")
+            print(f"Thrown dice so far: {counter}")
 
     elif choice == "n":
         print(messages.get("thanks"))
